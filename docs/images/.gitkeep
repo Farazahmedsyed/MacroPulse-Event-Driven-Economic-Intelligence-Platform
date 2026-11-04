@@ -1,39 +1,39 @@
 ## Airflow Pipeline Evidence
 
-### Automated Reporting Workflow
-
-<img width="1774" height="763" alt="FRED reports workflow" src="docs/images/fred-reports-overview.png" />
-
-*The reporting DAG completed successfully with zero failed tasks and automatically executed the CSV export and dashboard-building processes.*
-
----
-
 ### Gold Warehouse Workflow
 
-<img width="1708" height="732" alt="FRED warehouse workflow" src="docs/images/fred-warehouse-overview.png" />
+<img width="1708" height="732" alt="Gold warehouse workflow" src="https://github.com/user-attachments/assets/4581ed5a-08f3-482d-bccd-9ac70390dac3" />
 
-*The warehouse DAG successfully built the Gold analytical tables, executed data-quality checks, and published the final warehouse asset.*
+*The warehouse DAG successfully built the Gold analytical tables, ran the required data-quality checks, and published the Gold asset for downstream reporting.*
 
 ---
 
 ### Task Performance Monitoring
 
-<img width="1020" height="607" alt="Airflow task performance" src="docs/images/task-instance-performance.png" />
+<img width="1020" height="607" alt="Airflow task performance" src="https://github.com/user-attachments/assets/4d85a8ce-9f9d-4acf-bb3e-e3fff3f37872" />
 
-*Airflow recorded successful task instances with approximately two-second execution times and zero failed task instances.*
+*Airflow recorded successful task instances with short execution times and zero failed task instances.*
+
+---
+
+### Automated Reporting Workflow
+
+<img width="1845" height="713" alt="Automated reporting workflow" src="https://github.com/user-attachments/assets/6d0fdefa-af0c-4e1f-a121-87cb7be8f71d" />
+
+*The reporting DAG automatically exported the reporting dataset and rebuilt the dashboard after receiving the Gold asset.*
 
 ---
 
 ### Asset-Triggered Warehouse Runs
 
-<img width="1855" height="780" alt="Warehouse asset events" src="docs/images/warehouse-asset-events.png" />
+<img width="1855" height="780" alt="Warehouse asset events" src="https://github.com/user-attachments/assets/668f6657-ca3d-45e9-a0d0-f6f4b8f4c135" />
 
-*The warehouse completed three successful runs and automatically triggered the downstream reporting DAG through published Gold asset events.*
+*The warehouse completed three successful runs and automatically triggered the downstream reporting DAG through published asset events.*
 
 ---
 
 ### Incremental Series Selection
 
-<img width="1816" height="698" alt="Series selection performance" src="docs/images/select-series-performance.png" />
+<img width="1816" height="698" alt="Incremental series selection" src="https://github.com/user-attachments/assets/7beafeb9-f5c8-4ef0-8d57-65b3d4fd574d" />
 
 *The series-selection task completed successfully across scheduled and manual runs, demonstrating reliable incremental ingestion behavior.*
