@@ -44,6 +44,7 @@ After the Gold warehouse was published, Airflow automatically executed the CSV e
 8. Successful DAG Run History
 dag-run-history.png
 The run history confirms successful manual, scheduled, and asset-triggered executions across the ingestion, warehouse, and reporting workflows.<img width="1841" height="731" alt="download" src="https://github.com/user-attachments/assets/80368878-ed17-4fdc-a24c-7b08e2bf3650" />
+blob:https://chatgpt.com/1361f834-614a-43f0-ad12-db42ab72dc40
 
 
 ## Project Overview
