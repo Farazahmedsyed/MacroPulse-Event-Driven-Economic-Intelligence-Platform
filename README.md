@@ -14,26 +14,36 @@ An event-driven data engineering platform that ingests U.S. economic indicators 
 Pipeline Demonstration
 1. End-to-End Airflow Orchestration
 airflow-dags-overview.png<img width="1910" height="901" alt="download" src="https://github.com/user-attachments/assets/14242c6c-5b23-4cc5-8140-47d7e4232817" />
-
 The Airflow environment shows successful ingestion, warehouse, and reporting workflows, demonstrating automated data movement from FRED through the complete analytics pipeline.
+
 2. Dynamic Task Mapping
-dynamic-task-mapping.png
+dynamic-task-mapping.png<img width="1025" height="492" alt="download" src="https://github.com/user-attachments/assets/a02e1ac0-3777-4933-8edc-61becc71a93c" />
 Airflow dynamically created individual fetch tasks for each configured FRED indicator, allowing multiple economic series to be processed efficiently.
+
 3. Bronze and Silver Validation
-bronze-silver-validation.png
+bronze-silver-validation.png<img width="1884" height="909" alt="download" src="https://github.com/user-attachments/assets/c7592616-02cf-4aab-bc12-9c0ff7f278e4" />
 DuckDB confirmed that HOUST landed with 813 observations and was standardized as a monthly series covering January 1959 through September 2026.
+
 4. Gold Series Dimension
-gold-series-dimension.png
+gold-series-dimension.png<img width="798" height="481" alt="download" src="https://github.com/user-attachments/assets/0be9d645-6248-4073-b28a-26c0c4a4332d" />
+
 The Gold warehouse assigned analytical surrogate keys to every indicator, with HOUST receiving series_key = 9 after the dimension rebuild.
+
 5. Quarterly Fact Validation
-quarterly-facts.png
+quarterly-facts.png<img width="652" height="462" alt="download" src="https://github.com/user-attachments/assets/bc88d953-01d3-41c5-9cdc-2ca895b5e017" />
 The quarterly fact table contains complete three-month HOUST aggregates, including a 2026-Q3 average value of 1292.7.
+
 6. Wide Reporting Table
-quarterly-wide-table.png
+quarterly-wide-table.png<img width="425" height="224" alt="download" src="https://github.com/user-attachments/assets/1bcff759-dfdd-47de-9bd2-08b3f458db7e" />
 The wide reporting table transforms Gold-layer quarterly facts into a dashboard-friendly structure with one column for each economic indicator.
+
 7. Automated Reporting Tasks
-reporting-tasks.png
+reporting-tasks.png<img width="1260" height="447" alt="download" src="https://github.com/user-attachments/assets/6bc6af82-9925-4a16-ac35-734578a94759" />
 After the Gold warehouse was published, Airflow automatically executed the CSV export and dashboard-building tasks.
+
+8. Successful DAG Run History
+dag-run-history.png
+The run history confirms successful manual, scheduled, and asset-triggered executions across the ingestion, warehouse, and reporting workflows.<img width="1841" height="731" alt="download" src="https://github.com/user-attachments/assets/80368878-ed17-4fdc-a24c-7b08e2bf3650" />
 
 
 ## Project Overview
