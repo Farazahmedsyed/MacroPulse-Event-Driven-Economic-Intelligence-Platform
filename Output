@@ -1,0 +1,49 @@
+## Pipeline Demonstration
+
+### End-to-End Airflow Orchestration
+
+![Airflow DAG overview](docs/images/airflow-dags-overview.png)
+
+*The Airflow environment shows successful `fred_ingest`, `fred_warehouse`, and `fred_reports` workflows, demonstrating automated movement from ingestion through reporting.*
+
+### Dynamic Task Mapping
+
+![Dynamic task mapping](docs/images/dynamic-task-mapping.png)
+
+*Airflow dynamically created an independent fetch task for each configured economic indicator, allowing the pipeline to process multiple FRED series efficiently.*
+
+### Bronze and Silver Validation
+
+![Bronze and Silver validation](docs/images/bronze-silver-validation.png)
+
+*DuckDB validation confirmed that HOUST landed with 813 observations and was standardized as a monthly series covering January 1959 through September 2026.*
+
+### Gold Series Dimension
+
+![Gold series dimension](docs/images/gold-series-dimension.png)
+
+*The Gold warehouse assigned stable analytical keys to the configured indicators, with HOUST receiving `series_key = 9` after the dimension rebuild.*
+
+### Quarterly Fact Validation
+
+![Quarterly fact validation](docs/images/quarterly-facts.png)
+
+*The quarterly fact table contains complete three-month HOUST aggregates, including a 2026-Q3 average value of 1292.7.*
+
+### Wide Reporting Table
+
+![Quarterly wide table](docs/images/quarterly-wide-table.png)
+
+*The wide reporting table converts the Gold quarterly facts into a dashboard-friendly format with one column per economic indicator.*
+
+### Automated Reporting Tasks
+
+![Automated reporting tasks](docs/images/reporting-tasks.png)
+
+*After the Gold warehouse was published, Airflow automatically executed the CSV export and dashboard-building tasks.*
+
+### Successful DAG Run History
+
+![Successful DAG run history](docs/images/dag-run-history.png)
+
+*The run history confirms successful manual, scheduled, and asset-triggered execution across the ingestion, warehouse, and reporting workflows.*
