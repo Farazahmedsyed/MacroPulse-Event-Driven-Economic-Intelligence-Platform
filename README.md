@@ -13,7 +13,8 @@ An event-driven data engineering platform that ingests U.S. economic indicators 
 ### Successful Airflow Orchestration
 Pipeline Demonstration
 1. End-to-End Airflow Orchestration
-airflow-dags-overview.png
+airflow-dags-overview.png<img width="1910" height="901" alt="download" src="https://github.com/user-attachments/assets/14242c6c-5b23-4cc5-8140-47d7e4232817" />
+
 The Airflow environment shows successful ingestion, warehouse, and reporting workflows, demonstrating automated data movement from FRED through the complete analytics pipeline.
 2. Dynamic Task Mapping
 dynamic-task-mapping.png
