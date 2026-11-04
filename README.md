@@ -11,41 +11,28 @@ An event-driven data engineering platform that ingests U.S. economic indicators 
 
 
 ### Successful Airflow Orchestration
-
-The Airflow Grid view below shows the successful execution of the ingestion pipeline. The selector, dynamically mapped fetch tasks, and Silver transformation all completed successfully.
-
-![Successful Airflow pipeline](docs/images/airflow-pipeline-success.png)
-
-### Bronze-Layer Validation
-
-The Bronze validation confirms that the original HOUST response and ingestion metadata were stored successfully. The pipeline landed 813 historical observations.
-
-![Bronze validation](docs/images/bronze-validation.png)
-
-### Silver-Layer Validation
-
-The Silver output confirms that HOUST was standardized as a monthly indicator using the average aggregation method. The cleaned dataset contains 813 observations from January 1959 through September 2026.
-
-![Silver validation](docs/images/silver-validation.png)
-
-### Gold-Layer Validation
-
-The Gold warehouse produced analytics-ready quarterly values. Each displayed quarter contains three monthly observations and passed the completeness validation.
-
-![Gold validation](docs/images/gold-validation.png)
-
-### Automated Data-Quality Checks
-
-The pipeline validates data availability, frequency consistency, quarterly completeness, and date-dimension continuity before publishing reporting outputs.
-
-![Quality checks](docs/images/quality-checks.png)
-
-
-
-
-
-
-
+Pipeline Demonstration
+1. End-to-End Airflow Orchestration
+airflow-dags-overview.png
+The Airflow environment shows successful ingestion, warehouse, and reporting workflows, demonstrating automated data movement from FRED through the complete analytics pipeline.
+2. Dynamic Task Mapping
+dynamic-task-mapping.png
+Airflow dynamically created individual fetch tasks for each configured FRED indicator, allowing multiple economic series to be processed efficiently.
+3. Bronze and Silver Validation
+bronze-silver-validation.png
+DuckDB confirmed that HOUST landed with 813 observations and was standardized as a monthly series covering January 1959 through September 2026.
+4. Gold Series Dimension
+gold-series-dimension.png
+The Gold warehouse assigned analytical surrogate keys to every indicator, with HOUST receiving series_key = 9 after the dimension rebuild.
+5. Quarterly Fact Validation
+quarterly-facts.png
+The quarterly fact table contains complete three-month HOUST aggregates, including a 2026-Q3 average value of 1292.7.
+6. Wide Reporting Table
+quarterly-wide-table.png
+The wide reporting table transforms Gold-layer quarterly facts into a dashboard-friendly structure with one column for each economic indicator.
+7. Automated Reporting Tasks
+reporting-tasks.png
+After the Gold warehouse was published, Airflow automatically executed the CSV export and dashboard-building tasks.
 
 
 ## Project Overview
