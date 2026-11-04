@@ -1,0 +1,34 @@
+[
+  {
+    "id": "HOUST",
+    "name": "Housing Starts",
+    "category": "Housing",
+    "frequency": "monthly",
+    "units": "Thousands of Units",
+    "aggregation_method": "avg"
+  },
+  {
+    "id": "UNRATE",
+    "name": "Unemployment Rate",
+    "category": "Employment",
+    "frequency": "monthly",
+    "units": "Percent",
+    "aggregation_method": "avg"
+  },
+  {
+    "id": "CPIAUCSL",
+    "name": "Consumer Price Index",
+    "category": "Inflation",
+    "frequency": "monthly",
+    "units": "Index",
+    "aggregation_method": "avg"
+  },
+  {
+    "id": "PAYEMS",
+    "name": "Total Nonfarm Payrolls",
+    "category": "Employment",
+    "frequency": "monthly",
+    "units": "Thousands of Persons",
+    "aggregation_method": "avg"
+  }
+]
