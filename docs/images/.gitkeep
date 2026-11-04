@@ -1,1 +1,39 @@
+## Airflow Pipeline Evidence
 
+### Automated Reporting Workflow
+
+<img width="1774" height="763" alt="FRED reports workflow" src="docs/images/fred-reports-overview.png" />
+
+*The reporting DAG completed successfully with zero failed tasks and automatically executed the CSV export and dashboard-building processes.*
+
+---
+
+### Gold Warehouse Workflow
+
+<img width="1708" height="732" alt="FRED warehouse workflow" src="docs/images/fred-warehouse-overview.png" />
+
+*The warehouse DAG successfully built the Gold analytical tables, executed data-quality checks, and published the final warehouse asset.*
+
+---
+
+### Task Performance Monitoring
+
+<img width="1020" height="607" alt="Airflow task performance" src="docs/images/task-instance-performance.png" />
+
+*Airflow recorded successful task instances with approximately two-second execution times and zero failed task instances.*
+
+---
+
+### Asset-Triggered Warehouse Runs
+
+<img width="1855" height="780" alt="Warehouse asset events" src="docs/images/warehouse-asset-events.png" />
+
+*The warehouse completed three successful runs and automatically triggered the downstream reporting DAG through published Gold asset events.*
+
+---
+
+### Incremental Series Selection
+
+<img width="1816" height="698" alt="Series selection performance" src="docs/images/select-series-performance.png" />
+
+*The series-selection task completed successfully across scheduled and manual runs, demonstrating reliable incremental ingestion behavior.*
