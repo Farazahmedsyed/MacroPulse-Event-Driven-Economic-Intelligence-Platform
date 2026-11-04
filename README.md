@@ -10,9 +10,6 @@ An event-driven data engineering platform that ingests U.S. economic indicators 
 ![FRED](https://img.shields.io/badge/FRED-Economic%20Data-00529B)
 
 
-## Pipeline Demonstration
-<img width="1910" height="901" alt="download" src="https://github.com/user-attachments/assets/c1980a2f-c7bd-40e8-9870-fe4d51f9a78c" />
-
 ### Successful Airflow Orchestration
 
 The Airflow Grid view below shows the successful execution of the ingestion pipeline. The selector, dynamically mapped fetch tasks, and Silver transformation all completed successfully.
