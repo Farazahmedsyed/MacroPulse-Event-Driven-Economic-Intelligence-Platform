@@ -45,6 +45,53 @@ After the Gold warehouse was published, Airflow automatically executed the CSV e
 dag-run-history.png
 The run history confirms successful manual, scheduled, and asset-triggered executions across the ingestion, warehouse, and reporting workflows.<img width="1841" height="731" alt="download" src="https://github.com/user-attachments/assets/80368878-ed17-4fdc-a24c-7b08e2bf3650" />
 
+## Airflow Pipeline Evidence
+
+### Gold Warehouse Workflow
+
+<img width="1708" height="732" alt="Gold warehouse workflow" src="https://github.com/user-attachments/assets/4581ed5a-08f3-482d-bccd-9ac70390dac3" />
+
+*The warehouse DAG successfully built the Gold analytical tables, ran the required data-quality checks, and published the Gold asset for downstream reporting.*
+
+---
+
+### Task Performance Monitoring
+
+<img width="1020" height="607" alt="Airflow task performance" src="https://github.com/user-attachments/assets/4d85a8ce-9f9d-4acf-bb3e-e3fff3f37872" />
+
+*Airflow recorded successful task instances with short execution times and zero failed task instances.*
+
+---
+
+### Automated Reporting Workflow
+
+<img width="1845" height="713" alt="Automated reporting workflow" src="https://github.com/user-attachments/assets/6d0fdefa-af0c-4e1f-a121-87cb7be8f71d" />
+
+*The reporting DAG automatically exported the reporting dataset and rebuilt the dashboard after receiving the Gold asset.*
+
+---
+
+### Asset-Triggered Warehouse Runs
+
+<img width="1855" height="780" alt="Warehouse asset events" src="https://github.com/user-attachments/assets/668f6657-ca3d-45e9-a0d0-f6f4b8f4c135" />
+
+*The warehouse completed three successful runs and automatically triggered the downstream reporting DAG through published asset events.*
+
+---
+
+### Incremental Series Selection
+
+<img width="1816" height="698" alt="Incremental series selection" src="https://github.com/user-attachments/assets/7beafeb9-f5c8-4ef0-8d57-65b3d4fd574d" />
+
+*The series-selection task completed successfully across scheduled and manual runs, demonstrating reliable incremental ingestion behavior.*
+
+
+
+
+
+
+
+
 ### Automated Reporting Workflow
 
 <img width="1774" height="763" alt="FRED reports workflow" src="docs/images/fred-reports-overview.png" />
