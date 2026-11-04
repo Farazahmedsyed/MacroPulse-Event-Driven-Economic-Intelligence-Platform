@@ -9,6 +9,47 @@ An event-driven data engineering platform that ingests U.S. economic indicators 
 ![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)
 ![FRED](https://img.shields.io/badge/FRED-Economic%20Data-00529B)
 
+
+## Pipeline Demonstration
+
+### Successful Airflow Orchestration
+
+The Airflow Grid view below shows the successful execution of the ingestion pipeline. The selector, dynamically mapped fetch tasks, and Silver transformation all completed successfully.
+
+![Successful Airflow pipeline](docs/images/airflow-pipeline-success.png)
+
+### Bronze-Layer Validation
+
+The Bronze validation confirms that the original HOUST response and ingestion metadata were stored successfully. The pipeline landed 813 historical observations.
+
+![Bronze validation](docs/images/bronze-validation.png)
+
+### Silver-Layer Validation
+
+The Silver output confirms that HOUST was standardized as a monthly indicator using the average aggregation method. The cleaned dataset contains 813 observations from January 1959 through September 2026.
+
+![Silver validation](docs/images/silver-validation.png)
+
+### Gold-Layer Validation
+
+The Gold warehouse produced analytics-ready quarterly values. Each displayed quarter contains three monthly observations and passed the completeness validation.
+
+![Gold validation](docs/images/gold-validation.png)
+
+### Automated Data-Quality Checks
+
+The pipeline validates data availability, frequency consistency, quarterly completeness, and date-dimension continuity before publishing reporting outputs.
+
+![Quality checks](docs/images/quality-checks.png)
+
+
+
+
+
+
+
+
+
 ## Project Overview
 
 MacroPulse demonstrates how economic data can be collected, transformed, validated, and published through an automated data pipeline.
