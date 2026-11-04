@@ -381,4 +381,3 @@ University of South Florida
 
 ---
 
-This repository is a cleaned portfolio implementation. Credentials, raw data, assignment instructions, and proprietary course materials are not included.
